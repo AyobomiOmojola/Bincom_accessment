@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of all LGAS</title>
+</head>
+<body>
+    
+
+<form action="{% url 'election_poll:gettotallgaresult' %}" method="post">
+    {% csrf_token %}
+    <label for="lga">Select LGA from drop-down menu:</label>
+    <select name="lga" id="lga">
+        {% for lga in lgas %}
+        <option value="{{ lga.lga_id }}">
+            {{ lga.lga_name }}
+        </option>
+        {% endfor %}
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+    
+</body>
+</html>

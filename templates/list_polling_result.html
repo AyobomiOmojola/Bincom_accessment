@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling Unit Result</title>
+</head>
+
+<body>
+    <h1>These is the list of polling units with election results</h1>
+    {% for polls in polling_result %}
+    <a href="{% url 'election_poll:getpollingresult' polling_id=polls.uniqueid %}"><p>{{ polls.polling_unit_name }}</p></a>
+    {% endfor %}
+</body>
+
+</html>

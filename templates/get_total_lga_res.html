@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get total Lga Result</title>
+</head>
+<body>
+    <h1>This is the summed total of polling results in {{ lga.lga_name }}</h1>
+    {% if total.party_score__sum == None  %}
+        <h3>There are no results for this local government </h3>
+    {% else %}
+    <h3 style="color:rgb(77, 66, 66)">Sum Total: {{total.party_score__sum}}</h3>
+    {% endif %}
+    
+</body>
+</html>

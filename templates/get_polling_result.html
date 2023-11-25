@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <title>Polling Unit Result</title>
+</head>
+<body>
+    <h1>This is the polling unit result for <strong style="color:rgb(77, 66, 66)">{{polling_unit.polling_unit_name}}</strong> </h1>
+    <table>
+        <thead>
+            <tr>
+                <th>resultid</th>
+                <th>party_abbreviation</th>
+                <th>party_score</th>
+                <th>entered_by_user</th>
+                <th>user_ip_address</th>
+                <th>date_entered</th>
+            </tr>
+        </thead> 
+        {% for polls in polling_result %}
+        <tbody>
+            <tr>
+                <td>{{polls.result_id}}</td>
+                <td>{{polls.party_abbreviation}}</td>
+                <td>{{polls.party_score}}</td>
+                <td>{{polls.entered_by_user}}</td>
+                <td>{{polls.user_ip_address}}</td>
+                <td>{{polls.date_entered}}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</body>
+</html>
